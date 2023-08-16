@@ -3,13 +3,13 @@ import {
   RouterProvider,
   Outlet,
 } from "react-router-dom";
-import Register from "./pages/Register";
-import Login from "./pages/Login";
-import Write from "./pages/Write";
+import Register from "./pages/register";
+import Login from "./pages/login";
+import Write from "./pages/write";
 import Home from "./pages/home.jsx";
-import Single from "./pages/Single";
+import Single from "./pages/single";
 import Navbar from "./components/navbar";
-import Footer from "./components/Footer";
+import Footer from "./components/footer";
 import "./style.scss";
 
 const Layout = () => {
