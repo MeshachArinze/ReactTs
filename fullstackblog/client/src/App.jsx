@@ -1,15 +1,14 @@
 import {
   createBrowserRouter,
   RouterProvider,
-  Route,
   Outlet,
 } from "react-router-dom";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Write from "./pages/Write";
-import Home from "./pages/Home";
+import Home from "./pages/home.jsx";
 import Single from "./pages/Single";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/navbar";
 import Footer from "./components/Footer";
 import "./style.scss";
 
