@@ -1,8 +1,10 @@
+import Topbar from "../../components/topbar/topbar";
+import Sidebar from "../../components/sidebar/sidebar";
+import Feed from "../../components/feed/feed";
+import Rightbar from "../../components/rightBar/rightbar";
 
-import Topbar from "../../components/topbar/Topbar";
-import Sidebar from "../../components/sidebar/Sidebar";
-import Feed from "../../components/feed/Feed";
-import Rightbar from "../../components/rightbar/Rightbar";
+import Post3 from "../../assets/post/3.jpeg";
+import Person3 from "../../assets/person/7.jpeg";
 
 export default function Profile() {
   return (
@@ -15,12 +17,12 @@ export default function Profile() {
             <div className="profileCover">
               <img
                 className="profileCoverImg"
-                src="assets/post/3.jpeg"
+                src={Post3}
                 alt=""
               />
               <img
                 className="profileUserImg"
-                src="assets/person/7.jpeg"
+                src={Person3}
                 alt=""
               />
             </div>
