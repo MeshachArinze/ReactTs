@@ -1,14 +1,14 @@
-import Home from "./pages/home/Home";
+import Home from "./pages/home/home";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
-import Users from "./pages/users/Users";
-import Products from "./pages/products/Products";
-import Navbar from "./components/navbar/Navbar";
-import Footer from "./components/footer/Footer";
-import Menu from "./components/menu/Menu";
-import Login from "./pages/login/Login";
+import Users from "./pages/users/users";
+import Products from "./pages/products/products";
+import Navbar from "./components/navbar/navbar";
+import Footer from "./components/footer/footer";
+import Menu from "./components/menu/menu";
+import Login from "./pages/login/login";
 import "./styles/global.scss";
-import User from "./pages/user/User";
-import Product from "./pages/product/Product";
+import User from "./pages/user/user";
+import Product from "./pages/product/product";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 const queryClient = new QueryClient();
