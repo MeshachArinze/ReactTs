@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-/* eslint-disable react-refresh/only-export-components */
 import React, { useState, useContext, useEffect } from "react";
 import { useCallback } from "react";
 
@@ -53,7 +52,7 @@ const AppProvider = ({ children }) => {
   );
 };
 // make sure use
-export const useGlobalContext = () => {
+export const UseGlobalContext = () => {
   return useContext(AppContext);
 };
 
