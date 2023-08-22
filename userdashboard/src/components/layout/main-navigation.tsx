@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useSession, signOut } from "next-auth/react";
 
-import classes from "./main-navigation.module.css";
+import "./main-navigation.css";
 
 function MainNavigation() {
   const { data: session, status } = useSession();
@@ -11,10 +11,10 @@ function MainNavigation() {
     signOut();
   }
   return (
-    <header className={classes.header}>
+    <header className="header">
       <Link href="/">
         <a>
-          <div className={classes.logo}>Dashboard</div>
+          <div className="logo">Dashboard</div>
         </a>
       </Link>
       <nav>
