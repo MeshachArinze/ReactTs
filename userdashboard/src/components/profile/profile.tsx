@@ -1,5 +1,4 @@
-import { useRef } from "react";
-import { FormEventHandler } from "react";
+import { FormEventHandler, useRef } from "react";
 import  "./Profile.css";
 
 function ProfileForm(props: any) {
