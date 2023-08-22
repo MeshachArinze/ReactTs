@@ -13,6 +13,10 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
+    // "rootDir": "lib", // Location of TypeScript files
+    // "outDir": "dist", // Location of compiled JavaScript files
+
+    "sourceMap": true,
     "plugins": [
       {
         "name": "next"
@@ -22,6 +26,11 @@
       "@/*": ["./src/*"]
     }
   },
+
+  // "ts-node": {
+  //   "esm": true,
+  //   "experimentalSpecifierResolution": "node"
+  // },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
 }
