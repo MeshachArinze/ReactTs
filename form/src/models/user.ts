@@ -9,6 +9,7 @@ export const BasicUserSchema = z.object({
   username: z
     .string()
     .trim()
+
     .toLowerCase()
     .min(4, { message: "username must be 4 or more characters long" }),
 
@@ -31,4 +32,16 @@ export const BasicUserSchema = z.object({
       .min(5, { message: "Company name must be 5 or more characters long" }),
     catchPhrase: z.string().optional(),
   }),
+});
+
+const UserAddressSchema = z.object({
+  street: z
+    .string()
+    .trim()
+    .min(5, { message: "Street must be 5 or characters long" }),
+  suite: z.string().trim().optional(),
+  city: z
+    .string()
+    .trim()
+    .min(2, { message: "City must be 2 or more characters long" }),
 });
