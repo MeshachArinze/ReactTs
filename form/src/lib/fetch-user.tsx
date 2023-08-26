@@ -1,7 +1,26 @@
-function FetchUser() {
-  return (
-    <div>fetch-user</div>
-  )
-}
+import { UserSchemaWithGeo } from "../models/user";
+import { z } from "zod";
 
-export default FetchUser
+const UserResults = z.array(UserSchemaWithGeo);
+
+console.log(UserResults)
+
+type UserArray = z.infer<typeof UserResults>;
+
+export default async function fetchUsers(): Promise<UserArray | undefined> {
+  try {
+    const res = await fetch("https://jsonplaceholder.typicode.com/users");
+
+    if (!res.ok) return undefined;
+
+    const usersJson: UserArray = await res.json();
+
+    const parsedData = UserResults.parse(usersJson);
+
+    console.log(parsedData);
+
+    return parsedData;
+  } catch (err) {
+    if (err instanceof Error) console.log(err.stack);
+  }
+}
