@@ -9,6 +9,7 @@ export const BasicUserSchema = z.object({
   username: z
     .string()
     .trim()
+
     .toLowerCase()
     .min(4, { message: "username must be 4 or more characters long" }),
 
@@ -32,3 +33,46 @@ export const BasicUserSchema = z.object({
     catchPhrase: z.string().optional(),
   }),
 });
+
+const UserAddressSchema = z.object({
+  street: z
+    .string()
+    .trim()
+    .min(5, { message: "Street must be 5 or characters long" }),
+  suite: z.string().trim().optional(),
+  city: z
+    .string()
+    .trim()
+    .min(2, { message: "City must be 2 or more characters long" }),
+  zipcode: z
+    .string()
+    .regex(/^\d{5}(?:[-\s]\d{4})?$/, {
+      message: "Must be 5 digit zip. Optional 4 digit extension allowed.",
+    }),
+});
+
+const UserAddressSchemaWithGeo = UserAddressSchema.extend({
+  geo: z.object({
+    lat: z.string(),
+    lng: z.string(),
+  }),
+});
+
+const HasIDSchema = z.object({ id: z.number().int().positive() })
+
+export const UserFormSchemaWithAddress = BasicUserSchema.extend({
+  address: UserAddressSchema,
+});
+
+export const UserSchemaWithAddress =
+  UserFormSchemaWithAddress.merge(HasIDSchema);
+
+export const UserSchemaWithGeo = BasicUserSchema.extend({
+  address: UserAddressSchemaWithGeo,
+}).merge(HasIDSchema);
+
+export type UserFormWithAddress = z.infer<typeof UserFormSchemaWithAddress>;
+
+export type UserWithAddress = z.infer<typeof UserSchemaWithAddress>;
+
+export type UserWithGeo = z.infer<typeof UserSchemaWithGeo>;
