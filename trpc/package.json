@@ -1,0 +1,34 @@
+{
+  "name": "reactts",
+  "version": "1.0.0",
+  "description": "JavaScript || React || NextJs || TypeScript",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev:server": "tsx watch server",
+    "dev:client": "wait-port 3000 && tsx watch client",
+    "dev": "run-p dev:* --print-label",
+    "start": "node dist/server",
+    "lint": "eslint --ext \".js,.ts,.tsx\" --report-unused-disable-directives */*.ts",
+    "test-dev": "start-server-and-test 'tsx server' 3000 'tsx client'",
+    "test-start": "start-server-and-test 'node dist/server' 3000 'node dist/client'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.5.7",
+    "eslint": "^8.48.0",
+    "npm-run-all": "^4.1.5",
+    "start-server-and-test": "^2.0.0",
+    "tsconfig.json": "^1.0.11",
+    "tsx": "^3.12.7",
+    "typescript": "^5.2.2",
+    "wait-port": "^1.0.4"
+  },
+  "dependencies": {
+    "@trpc/client": "^10.38.0",
+    "global": "^4.4.0",
+    "undici": "^5.23.0"
+  }
+}
